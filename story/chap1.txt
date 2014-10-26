@@ -1,0 +1,3 @@
+Bienvenue !
+Vous voici sur le premier chapitre de l'histoire commnautaire.
+Les fichiers contenant les chapitres sont de simples fichiers texte (.txt) situés dans le répertoire *story*.

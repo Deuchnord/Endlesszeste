@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^chapitre-([0-9+])$ /index.php?chap=$1
+RewriteRule ^Un_Zeste_sans_Fin.pdf$ /pdf.php
+
+RewriteRule ^ecrivain/personnages/?$ /index.php?characters
+RewriteRule ^ecrivain/personnages/([A-Z1])$ /index.php?characters&capital=$1
+RewriteRule ^ecrivain/histoire$ /index.php?story
+
+RewriteRule ^ecrivain/regles$ /regles.php

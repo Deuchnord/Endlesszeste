@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather&subset=latin-ext);
+
+h1, h2
+{
+    text-align: center;
+}
+
+.chapter-content
+{
+    font-family: 'Merriweather', serif;
+    text-align: justify;
+}
+
+.firstParagraph:first-letter
+{
+    float: left;
+    font-size: 10em;
+}
+
+abbr, .abbr {
+	border-bottom: 1px dotted gray;
+}

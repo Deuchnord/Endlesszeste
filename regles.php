@@ -1,34 +1,3 @@
-<?php
-    $chap = 1;
-    if(isset($_GET['chap']) && (int)$_GET['chap'] >= 1)
-        $chap = $_GET['chap'];
-    
-    //if(!file_exists("story/chap".$chap-1 .".txt"))
-        //header('Location: /chapitre-'.$chap-1);
-
-    $cryptinstall="./crypt/cryptographp.fct.php";
-    require $cryptinstall;
-    
-    function normalizeText($text, $firstLetter)
-    {
-        $textModified = $text;
-        
-        $textModified = preg_replace('#( )?([?!;:])#', "&nbsp;$2", $textModified);
-        $textModified = str_replace('?&nbsp;!', '?!', $textModified);
-        $textModified = str_replace("« ", "«&nbsp;", $textModified);
-        $textModified = str_replace(" »", "&nbsp;»", $textModified);
-        $textModified = preg_replace("#\"([^\"]+)\"#", "«&nbsp;$1&nbsp;»", $textModified);
-        $textModified = preg_replace("#[*_]([^\"]+)[*_]#", "<span style=\"font-style:italic\">$1</span>", $textModified);
-        $textModified = str_replace("'", "’", $textModified);
-        $textModified = str_replace("...", "…", $textModified);
-        $textModified = str_replace("[censured]", '<span style="background:black;color:white;font-family:Arial;padding:2px;transform:rotate(15deg);">CENSURED</span>', $textModified);
-        
-        return $textModified;
-    }
-    
-    $nbParticipants = 0;
-    $ip = array();
-?>
 <!DOCTYPE html>
 <html>
     <head>

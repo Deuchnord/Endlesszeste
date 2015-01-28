@@ -1,5 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather&subset=latin-ext);
 
+@font-face
+{
+	font-family: "Comic Sans MS";
+	src: url(/fonts/comicbd/comic.ttf);
+}
+
+@font-face
+{
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+	src: url(/fonts/comicbd/comicbd.ttf);
+}
+
 h1, h2
 {
     text-align: center;
@@ -19,4 +32,8 @@ h1, h2
 
 abbr, .abbr {
 	border-bottom: 1px dotted gray;
+}
+
+.code {
+	font-family: Courier;
 }

@@ -1,3 +1,36 @@
-Bienvenue !
-Vous voici sur le premier chapitre de l'histoire commnautaire.
-Les fichiers contenant les chapitres sont de simples fichiers texte (.txt) situés dans le répertoire *story*.
+Prologue
+Il faisait noir.
+Si noir que même en plissant ses petits yeux fatigués, Clem ne pouvait rien distinguer. Depuis le temps qu'elle était enfermée dans cet endroit si étroit, sans jamais voir la lumière du jour, sans jamais rencontrer personne, elle avait fini par se demander si elle n'était pas tout simplement aveugle. Quelle heure était-il ? Depuis combien de temps était-elle là, couchée sur ce sol rugueux, dont elle ne reconnaissait pas la matière ? D'ailleurs, où était-elle ?
+En tâtant prudemment tout autour d'elle, Clem en était arrivée à la conclusion suivante : la pièce était totalement vide. Le sol, les murs, et même le plafond - qui était particulièrement bas - étaient faits exactement de la même matière.
+De temps en temps, elle entendait des voix, sans pour autant en comprendre distinctement les paroles. Elle avait à peine compris les mots « site », « savoir » et quelque chose qui commençait par « eski- », mais cela ne voulait rien dire.
+Fatiguée, Clem ferma ses yeux pour faire un somme.
+Une voix à faire trembler les murs se fit soudain entendre :
+- Les gars, je déballe Clem !
+Quelques secondes plus tard, la pièce fut secouée comme jamais. Clem tenta de s'agripper à quelque chose, mais elle n'y parvint pas et voltigea à l'autre bout de la petite pièce. Heureusement, elle ne se blessa pas. Une petite fente lumineuse s'ouvrit alors dans un coin du plafond, et s'élargit lentement. Le plafond disparut alors totalement.
+Clem fut si éblouie qu'elle ferma ses petits yeux. Elle pensa alors que c'en était fini, qu'elle allait mûrir. Deux mains étonnamment douces la prirent alors et la soulevèrent avec délicatesse. Commençant à s'habituer à la lumière, elle ouvrit lentement ses yeux et regarda devant elle. Elle vit alors un visage souriant. Il s'agissait d'un homme d'une trentaine d'années. Sa tête ressemblait un peu à celle d'un renard, mais cela lui donnait un air sympathique.
+Il ouvrit alors la bouche et dit alors d'une voix douce :
+- Salut, Clem. Moi, c'est SpaceFox. Ça te dit de devenir la mascotte d'un site communautaire d'apprentissage ?
+
+- Devenir quoi ? Pour qui ?
+Clem ne comprenait rien. Elle avait faim et était encore un peu secouée. SpaceFox sembla s'en rendre compte, et sortit de la pièce spacieuse qui contenait beaucoup de boîtes en carton encore fermées, tenant toujours Clem soigneusement dans ses mains. Il l'emmena dans une magnifique cuisine dans laquelle se tenait un jeune homme. Il était appuyé sur le rebord d'une fenêtre et contemplait le paysage extérieur.
+- Eskimon, tu aurais un remontant pour Clem ? demanda SpaceFox. Genre, de l'engrais...
+Le jeune homme lui indiqua alors un bocal en verre posé sur une étagère.
+- Tiens, sur l’étagère là-bas, on l'a rangé là depuis le déménagement.
+
+SpaceFox posa délicatement Clem sur une table dans un coin de la pièce, se dirigea vers l'étagère désignée par Eskimon et en sortit une grosse boîte blanche étiquetée « Engrais ». Puis il retourna auprès de Clem pour lui donner un bon tas de petites graines. Clem ne se fit pas prier et mangea silencieusement.
+
+Tandis qu'elle mangeait, elle entendit les deux hommes discuter, sans vraiment comprendre ce qu'ils disaient, bien qu'ils parlassent à voix audible et intelligible. Du coin de l'œil, elle vit le visage du dénommé Eskimon : c'était un jeune homme assez beau, qui avait un peu une tête de caribou, mais cela lui allait bien. Clem se surprit même à lui imaginer des bois sortant fièrement de sa tête, au niveau de ses tempes.
+Une fois que Clem eut fini l'engrais, SpaceFox et Eskimon se penchèrent vers elle.
+
+- Une mascotte, disions-nous donc. Pour un site web communautaire d'apprentissage. Ça t'intéresse ?
+
+Clem réfléchit un peu, mais elle se rendit bien compte qu'elle n'avait pas vraiment le choix. Entre ça et la pièce sombre... De toute façon, elle devait bien avouer que l'idée était plaisante !
+
+- D'accord, j'accepte. Mais à une seule condition, fini la pièce sombre !
+SpaceFox et Eskimon échangèrent un regard amusé, puis promirent à Clem de ne plus jamais la mettre dans la pièce sombre.
+- Allez, tu viens, dit alors SpaceFox, on va voir les autres.
+- Les autres ?
+- Les autres développeurs du site.
+Eskimon prit délicatement Clem, et tous trois sortirent de la cuisine par une porte dérobée, puis traversèrent un petit jardin. Ils passèrent une petite barrière, et Clem étouffa une exclamation.
+Ils étaient maintenant sur une petite plage aménagée avec tables en cercle. Autour, une trentaine de personnes se hâtaient sur des ordinateurs.
+- Bienvenue sur la Plage de Développement, annonça fièrement Eskimon.

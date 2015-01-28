@@ -3,28 +3,15 @@
     if(isset($_GET['chap']) && (int)$_GET['chap'] >= 1)
         $chap = $_GET['chap'];
     
-    //if(!file_exists("story/chap".$chap-1 .".txt"))
-        //header('Location: /chapitre-'.$chap-1);
-
     $cryptinstall="./crypt/cryptographp.fct.php";
     require $cryptinstall;
     
     function normalizeText($text, $firstLetter)
     {
-        $textModified = $text;
-        
-        $textModified = preg_replace('#( )?([?!;:])#', "&nbsp;$2", $textModified);
-        $textModified = str_replace('?&nbsp;!', '?!', $textModified);
-	$textModified = str_replace('?&nbsp;?', '??', $textModified);
-        $textModified = str_replace("« ", "«&nbsp;", $textModified);
-        $textModified = str_replace(" »", "&nbsp;»", $textModified);
-        $textModified = preg_replace("#\"([^\"]+)\"#", "«&nbsp;$1&nbsp;»", $textModified);
-        $textModified = preg_replace("#[*_]([^\"]+)[*_]#", "<span style=\"font-style:italic\">$1</span>", $textModified);
-        $textModified = str_replace("'", "’", $textModified);
-        $textModified = str_replace("...", "…", $textModified);
-        $textModified = str_replace("[censured]", '<span style="background:black;color:white;font-family:Arial;padding:2px;transform:rotate(15deg);">CENSURED</span>', $textModified);
-        
-        return $textModified;
+	    require_once 'class/HTMLTextNormalizer.class.php';
+	    $normalizer = new HTMLTextNormalizer();
+
+	    return $normalizer->normalize($text);
     }
     
     $nbParticipants = 0;
@@ -43,124 +30,6 @@
     <body>
 
 <div class="container">
-<?php
-if(isset($_GET['story']))
-{?>
-    <header class="page-header">
-        <img src="/clem.png" alt="" style="float:left;height:64px" />
-        <h1>
-            Un Zeste sans Fin
-            <small>Résumé</small>
-        </h1>
-    </header>
-<?php include 'menu.php';?>
-    <div class="row">
-        <div class="col-md-12">
-            <p style="text-align:center;font-size:1.5em">Histoire − <a href="/ecrivain/personnages">Personnages</a></p>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-12">
-            <iframe style="width:100%;height:600px;border:none" src="http://www.mindmeister.com/maps/public_map_shell/451484719/un-zeste-sans-fin?width=600&height=400&z=auto&scrollbars=1" scrolling="no" style="overflow:hidden">Your browser is not able to display frames. Please visit the <a rel="nofollow" href="http://www.mindmeister.com/451484719/un-zeste-sans-fin" target="_blank">mind map: Un Zeste sans Fin</a> on <a rel="nofollow" href="http://www.mindmeister.com" target="_blank">Mind Mapping - MindMeister</a>.</iframe>
-        </div>
-    </div>
-<?php
-}
-else if(isset($_GET['characters']))
-{?>
-    <header class="page-header">
-        <img src="/clem.png" alt="" style="float:left;height:64px" />
-        <h1>
-            Un Zeste sans Fin
-            <small>Les personnages</small>
-        </h1>
-    </header>
-<?php include 'menu.php';?>
-    <div class="row">
-        <div class="col-md-12">
-            <p style="text-align:center;font-size:1.5em"><a href="/ecrivain/histoire">Histoire</a> − Personnages</p>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-12">
-            <p>Cette page rassemble les fiches de tous les personnages connus dans l'histoire. Elle est mise à jour fréquemment, n'hésitez pas à vous y référer en cas de besoin.<br />Une fiche de personnage ne donnant pas beaucoup de détails signifie généralement que l'histoire n'a pas donné beaucoup de précisions lors de la description. N'hésitez pas à leur donner de nouvelles caractéristiques (en restant cohérent avec l'histoire et ce que l'on sait déjà sur le personnage bien sûr&nbsp;!).</p>
-            <p><strong>Attention&nbsp;:</strong> les fiches peuvent dévoiler des informations clés de l'intrigue. Il n'est pas recommandé de les lire sans avoir au préalable lu l'histoire.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <p style="text-align:center;font-size:1.5em"><?php
-                $capital = (isset($_GET['capital'])) ? $_GET['capital'] : 'A';
-            
-                if($capital != 1)
-                    echo '<a href="/ecrivain/personnages/1">';
-                else echo '<strong>';
-                echo '#123';
-                if($capital != 1)
-                    echo '</a>';
-                else echo '</strong>';
-                echo ' ';
-                for($i = 65; $i <= 90; $i++)
-                {
-                    if($capital != chr($i))
-                        echo '<a href="/ecrivain/personnages/'.chr($i).'">';
-                    else echo '<strong>';
-                    echo chr($i);
-                    if($capital != chr($i))
-                        echo'</a>';
-                    else echo '</strong>';
-                    echo ' ';
-                }
-            ?></p>
-        </div>
-    </div>
-<?php
-    require 'personnages.php';
-    
-    ksort($personnages);
-    
-    $nbResults = 0;
-    
-    foreach($personnages as $name => $description)
-    {
-        if(strtoupper(substr($name, 0, 1)) == $capital)
-        {
-            $nbResults++;
-?>
-    <div class="row well">
-        <div class="col-md-12">
-            <h2><?php echo $name;?></h2>
-            <ul>
-<?php
-        foreach($description as $key => $value)
-        {
-            if($value == "")
-                $value = "<em>N/A</em>";
-?>
-                <li><strong><?php echo $key;?>&nbsp;:</strong> <?php echo $value;?></li>
-<?php
-        }?>
-            </ul>
-        </div>
-    </div>
-<?php
-        }
-    }
-    if($nbResults == 0)
-    {?>
-    <div class="row">
-        <div class="col-md-12">
-            <p style="text-align:center">Aucun personnage à afficher.</p>
-        </div>
-    </div>
-<?php
-    }
-}
-
-else
-{?>
     <header class="page-header">
         <img src="/clem.png" alt="" style="float:left;height:64px" />
         <h1>Un Zeste sans Fin</h1>
@@ -170,6 +39,7 @@ else
         <div class="col-md-12">
 <?php
     $chapfile = @fopen('story/chap'.$chap.'.txt', 'r');
+    $dontParseLine = false;
     
     if($chapfile)
     {
@@ -194,12 +64,19 @@ else
                     if(!$alreadyInArray)
                         $ip[count($ip)] = $match[1];
                 }
+                else if($text == "[[DONT_PARSE]]\n")
+                    $dontParseLine = true;
                 
                 else
                 {
-                    $text = normalizeText($text, $firstLetter);
-                    if($firstLetter)
-                        echo "<p class=\"firstParagraph\">$text</p>";
+                    if(!$dontParseLine)
+                        $text = normalizeText($text, $firstLetter);
+                    else
+                        $dontParseLine = false;
+                    if($firstLetter) {
+			$text = preg_replace('#^[^a-z]+#i', '', $text);
+			echo "<p class=\"firstParagraph\">$text</p>";
+		    }
                     else if(preg_match('#^- (.+)$#', $text, $match))
                         echo "<p style=\"margin-left:20px\">&mdash;&nbsp;{$match[1]}</p>";
                     else
@@ -210,6 +87,7 @@ else
                 
                 $title = false;
             }
+            
         } while($text);
     }
 ?>
@@ -317,8 +195,6 @@ else
             <a href="/Un_Zeste_sans_Fin.pdf" class="btn btn-default"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;Télécharger le PDF (bêta)</a>
         </div>
     </div>
-<?php
-}?>
 
 </div>
 

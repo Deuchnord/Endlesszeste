@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lettrine}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[frenchb]{babel}
+
+\title{Un Zeste sans Fin}
+\author{la communauté de Zeste de Savoir}
+
+\titleformat{\chapter}[display]{\LARGE\bfseries\centering}{Chapitre \thechapter}{0pt}{}
+\setlength{\parskip}{5pt}
+\addto\captionsfrench{
+	\renewcommand{\contentsname}{Sommaire}
+}
+
+\begin{document}
+
+\makeatletter
+
+\begin{titlepage}
+	\centering
+	\vspace*{5cm}
+	{\Huge \textsf{\textbf{\@title}}}\\
+	\vspace{2em}
+	\includegraphics{clem.png}\\
+
+	\vfill
+	{\large \textsf{\textbf{Par \@author}}}\\
+\end{titlepage}
+
+\makeatother
+
+\include{storypdf/chap1}
+\include{storypdf/chap2}
+\include{storypdf/chap3}
+\include{storypdf/chap4}
+\include{storypdf/chap5}
+
+\tableofcontents
+
+\end{document}

@@ -1,0 +1,22 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.27.0",
+        "core-js": "^3.0.0",
+        "node-sass": "^4.11.0",
+        "sass-loader": "^7.0.1",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "normalize.css": "^8.0.1",
+        "typeface-merriweather": "^0.0.72",
+        "typeface-muli": "^0.0.71"
+    }
+}

@@ -1,0 +1,181 @@
+$dark-blue: #0d4964
+$light-blue: #396a81
+$darker-grey: #222
+$grey: #aaa
+$light-grey: #ccc
+$lighter-grey: #eee
+$white: #fff
+
+$font-light: 200
+
+@import "~normalize.css"
+@import "~typeface-merriweather"
+@import "~typeface-muli"
+
+html
+    position: relative
+    min-height: 100%
+    scrollbar-color: $light-blue $white
+    scrollbar-width: thin
+
+body
+    background-color: white
+    font-family: "Muli", sans-serif
+    margin-bottom: 150px
+    .center
+        text-align: center
+    > header
+        background: $dark-blue
+        > .header-inner
+            margin: auto
+            width: 1000px
+            position: relative
+            > .logo
+                display: inline-block
+                padding: 5px 20px
+                margin: 0
+                vertical-align: middle
+                > img
+                    display: inline-block
+                    height: 96px
+            > .main-menu
+                display: inline-block
+                cursor: default
+                position: absolute
+                right: 0
+                > ul
+                    padding: 0
+                    margin: 0
+                    font-size: 20px
+                    > li
+                        display: inline-block
+                        padding: 0
+                        margin: 40px 0 0
+
+                        > a
+                            color: $lighter-grey
+                            text-decoration: none
+                            padding: 10px 20px
+                            transition: 500ms
+
+                            &:hover
+                                color: $white
+                                background: $light-blue
+                                transition: 250ms
+
+    > footer
+        position: absolute
+        bottom: 0
+        width: 100%
+        background: $dark-blue
+        color: $lighter-grey
+        > p
+            text-align: center
+        a
+            color: $lighter-grey
+            &:hover
+                color: $white
+
+    .pagination
+        display: inline-block
+        margin: 20px
+        padding: 0
+        border: 1px solid $light-blue
+        border-radius: 2px
+        box-shadow: 0 0 3px $light-blue
+        font-size: 18px
+        > .item
+            display: inline-block
+            margin: 0
+            padding: 0
+            border-left: 1px solid $light-blue
+            &:first-child
+                border-left: none
+            > a
+                display: block
+                margin: 0
+                padding: 10px 15px
+                text-decoration: none
+                color: $darker-grey
+            &.current
+                background: $light-blue
+                > a
+                    color: $lighter-grey
+
+    > .chapter
+        font-family: Merriweather, serif
+        font-weight: $font-light
+        font-size: 18px
+        margin: auto
+        width: 50%
+        max-width: 1000px
+        text-align: justify
+        > h1
+            text-align: center
+            font-weight: normal
+        .italic
+            font-style: italic
+        .censured
+            display: inline-block
+            background: #111111
+            color: #fefefe
+            padding: 2px 5px
+            font-size: 0.95em
+            vertical-align: middle
+            transform: rotate(-2deg)
+
+    > .chapter-form
+        border-top: 1px solid $grey
+        border-bottom: 1px solid $grey
+        background: $light-grey
+        padding-top: 10px
+        padding-bottom: 10px
+
+        > .inner
+            width: 50%
+            margin: auto
+
+    form
+        > .row
+            padding-top: 5px
+            padding-bottom: 10px
+
+            > textarea
+                width: calc(100% - 10px)
+                height: 200px
+                resize: vertical
+                border: 1px solid $grey
+                padding: 10px
+                scrollbar-color: $grey $light-grey
+                scrollbar-width: thin
+
+            &.checkbox
+                display: table-row
+                > input[type=checkbox]
+                    display: table-cell
+                    vertical-align: middle
+                    margin-right: 10px
+                > label
+                    display: table-cell
+                    vertical-align: top
+
+            &.buttons
+                text-align: right
+
+    button, .btn
+        border: 1px solid $grey
+        background: $lighter-grey
+        padding: 5px 15px
+        cursor: pointer
+        transition: 500ms
+
+        &:hover
+            background: white
+            transition: 250ms
+
+        &.submit
+            background: $dark-blue
+            color: $lighter-grey
+
+            &:hover
+                background: $light-blue

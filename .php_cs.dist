@@ -1,0 +1,36 @@
+<?php
+
+const HEADER = <<<HEADER
+This file is part of Endlesszeste.
+
+Endlesszeste is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Endlesszeste is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with Endlesszeste.  If not, see <https://www.gnu.org/licenses/agpl.html>.
+HEADER;
+
+
+if (!file_exists(__DIR__ . '/src')) {
+    exit(0);
+}
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR2'                 => true,
+        '@Symfony'              => true,
+        '@PhpCsFixer'           => true,
+        'header_comment'        => [
+            'header'    => HEADER,
+            'location'  => 'after_open',
+        ],
+        'array_syntax'          => ['syntax' => 'short'],
+        'declare_strict_types'  => true,
+    ]);

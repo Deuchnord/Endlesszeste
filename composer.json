@@ -1,0 +1,85 @@
+{
+    "type": "project",
+    "license": "AGPL-3.0",
+    "minimum-stability": "beta",
+    "require": {
+        "php": "7.3.*",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "sensio/framework-extra-bundle": "^5.1",
+        "symfony/asset": "v4.3.0-beta1",
+        "symfony/console": "v4.3.0-beta1",
+        "symfony/dotenv": "v4.3.0-beta1",
+        "symfony/expression-language": "v4.3.0-beta1",
+        "symfony/flex": "^1.1",
+        "symfony/form": "v4.3.0-beta1",
+        "symfony/framework-bundle": "v4.3.0-beta1",
+        "symfony/monolog-bundle": "^3.1",
+        "symfony/orm-pack": "*",
+        "symfony/process": "v4.3.0-beta1",
+        "symfony/security-bundle": "v4.3.0-beta1",
+        "symfony/serializer-pack": "*",
+        "symfony/swiftmailer-bundle": "^3.1",
+        "symfony/translation": "v4.3.0-beta1",
+        "symfony/twig-bundle": "v4.3.0-beta1",
+        "symfony/validator": "v4.3.0-beta1",
+        "symfony/web-link": "v4.3.0-beta1",
+        "symfony/webpack-encore-bundle": "^1.5",
+        "symfony/yaml": "v4.3.0-beta1"
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.1",
+        "joshtronic/php-loremipsum": "^1.0",
+        "symfony/debug-pack": "*",
+        "symfony/maker-bundle": "^1.11",
+        "symfony/phpunit-bridge": "v4.3.0-beta1",
+        "symfony/profiler-pack": "*",
+        "symfony/test-pack": "*",
+        "symfony/web-server-bundle": "v4.3.0-beta1"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "paragonie/random_compat": "2.*",
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php71": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-php56": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "v4.3.0-beta1"
+        }
+    }
+}

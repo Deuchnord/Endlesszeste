@@ -1,6 +1,0 @@
-\select@language {french}
-\contentsline {chapter}{\numberline {1}Prologue}{3}
-\contentsline {chapter}{\numberline {2}La Plage de D\IeC {\'e}veloppement}{5}
-\contentsline {chapter}{\numberline {3}\IeC {\`A} la recherche d'Alex-D}{9}
-\contentsline {chapter}{\numberline {4}Une myst\IeC {\'e}rieuse apparition}{17}
-\contentsline {chapter}{\numberline {5}Le shooting}{21}

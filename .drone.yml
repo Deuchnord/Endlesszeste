@@ -1,0 +1,26 @@
+kind: pipeline
+name: default
+
+steps:
+    - name: install
+      image: composer
+      commands:
+          - composer install --ansi --no-progress
+          - wget https://get.sensiolabs.org/security-checker.phar
+          - wget -O php-cs-fixer.phar https://cs.symfony.com/download/php-cs-fixer-v2.phar
+
+    - name: security-check
+      image: php:7.3-alpine
+      commands:
+          - php security-checker.phar security:check composer.lock
+
+    - name: tests
+      image: composer
+      commands:
+          - bin/phpunit --testdox
+
+    - name: cs
+      image: php:7.3-alpine
+      commands:
+          - php php-cs-fixer.phar fix --allow-risky=yes --dry-run --diff --ansi src
+

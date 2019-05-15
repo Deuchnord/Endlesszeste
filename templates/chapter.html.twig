@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="center">
+    {{ pagination(chapter.number) }}
+</div>
+
+<article class="chapter">
+    <h1>{{ 'chapter.title' | trans({'%number%': chapter.number}) }}<br />{{ chapter.title }}</h1>
+
+    {% for extract in chapter.extracts %}
+        {{ extract.content | story }}
+    {% endfor %}
+</article>
+
+{% if form is not null %}
+    <div class="chapter-form">
+        <div class="inner">
+            <h2>{{ 'chapter.form.title' | trans }}</h2>
+            <p>{{ 'chapter.form.intro' | trans({'%helpUrl%': path('help')}) | raw }}</p>
+            {{ form_start(form) }}
+                <div class="row">
+                    {{ form_widget(form.text) }}
+                </div>
+                <div class="row checkbox">
+                    {{ form_widget(form.acceptTerms) }}
+                    <label for="{{ form.acceptTerms.vars.id }}">{{ 'chapter.form.terms' | trans({'%termsUrl%': path('help')}) | raw }}</label>
+                </div>
+                <div class="row buttons">
+                    {{ form_widget(form.submit) }}
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endif %}
+
+<div class="center">
+    {{ pagination(chapter.number) }}
+</div>
+{% endblock %}

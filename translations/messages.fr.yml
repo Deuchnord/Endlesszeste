@@ -1,0 +1,21 @@
+site:
+    lang: fr
+    title: Un Zeste sans Fin
+    credits: Site développé par Jérôme Deuchnord et mis à disposition sous la licence AGPL — <a href="https://github.com/Deuchnord/Endlesszeste" target="_blank">Code source</a><br />L'histoire est rédigé par les membres du site <a href="https://zestedesavoir.com" target="_blank">Zeste de Savoir</a> et est publiée selon les termes de la licence <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" target="_blank">Creative Commons BY-NC 4.0</a>.
+    menu:
+        story: Histoire
+        fix: Correction
+        forum: Forum
+        help: Aide
+    pagination:
+        previous: Chapitre précédent
+        next: Chapitre suivant
+        new: Nouveau chapitre
+
+chapter:
+    title: Chapitre %number%
+    form:
+        title: À vous de jouer !
+        intro: Saisissez ci-dessous la suite de ce chapitre ! Si vous avez besoin d'aide sur la syntaxe, n'hésitez pas à vous référer à la <a href="%helpUrl%" target="_blank">rubrique d'aide</a>.
+        terms: J'ai lu et j'accepte les <a href="%termsUrl%" target="_blank">règles de rédaction</a> du site.<br />En particulier, j'accepte que l'extrait que j'ai saisi soit publié selon les termes de la licence <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" target="_blank">Creative Commons BY-NC 4.0</a> au nom des membres de la Communauté Zeste de Savoir, et que mon adresse IP soit collectée à des fins de lutte contre le spam (et uniquement à ces fins).
+        submit: Publier mon extrait

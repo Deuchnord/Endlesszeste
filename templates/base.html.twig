@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ 'site.lang' | trans }}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{{ 'site.title' | trans }}{% endblock %}</title>
+        <link rel="icon" href="{{ asset('lib/img/icon.png') }}" />
+        <link rel="apple-touch-icon" href="{{ asset('lib/img/apple-icon.png') }}" />
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="header-inner">
+                <a href="{{ path('homepage') }}" aria-hidden="true" class="logo"><img src="{{ asset('lib/img/endlesszeste-logo-light.png') }}" alt="{{ 'site.title' | trans }}" /></a>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="{{ path('homepage') }}">{{ 'site.menu.story' | trans }}</a></li>
+                        {% if chapter is defined and chapter is not null %}
+                        <li><a href="{{ path('fix-chapter', {chapter: chapter.number}) }}">{{ 'site.menu.fix' | trans }}</a></li>
+                        {% endif %}
+                        <li><a href="{{ forum }}" target="_blank">{{ 'site.menu.forum' | trans }}</a></li>
+                        <li><a href="{{ path('help') }}">{{ 'site.menu.help' | trans }}</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        {% block body %}{% endblock %}
+        <footer>
+            <p>{{ 'site.credits' | trans | raw }}</p>
+        </footer>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
